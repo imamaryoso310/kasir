@@ -76,7 +76,7 @@
                         </div>
                         <div class="mb-2">
                             <label>Kembalian</label>
-                            <input type="number" class="form-control" id="kembalian" required>
+                            <input type="number" class="form-control" id="kembalian" readonly>
                         </div>
                         <div class="mb-2">
                             <label>Kasir</label>
@@ -150,12 +150,12 @@
             $('.btn-edit').on('click', function () {
                 let row = $(this).closest('tr');
                 $('#transaksi_id').val(row.data('id'));
-                $('#tanggal').val(row.find('td:eq(0)').text());
-                $('#total_harga').val(row.find('td:eq(1)').text().replace(/\./g, ''));
-                $('#bayar').val(row.find('td:eq(2)').text().replace(/\./g, ''));
-                $('#kembalian').val(row.find('td:eq(3)').text().replace(/\./g, ''));
-                $('#kasir').val(row.find('td:eq(4)').text());
-                $('#metode').val(row.find('td:eq(5)').text());
+                $('#tanggal').val(row.find('td:eq(1)').text()); // Tanggal
+                $('#total_harga').val(row.find('td:eq(2)').text().replace(/\./g, '')); // Total Harga
+                $('#bayar').val(row.find('td:eq(3)').text().replace(/\./g, '')); // Bayar
+                $('#kembalian').val(row.find('td:eq(4)').text().replace(/\./g, '')); // Kembalian
+                $('#kasir').val(row.find('td:eq(5)').text()); // Kasir
+                $('#metode').val(row.find('td:eq(6)').text()); // Metode
                 $('#formModal').modal('show');
             });
 
